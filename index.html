@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CS — Ticket System</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">CS — <strong>Ticket System</strong></div>
+      <ul class="nav-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Changelog</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Download</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#" class="new-ticket-btn">+ New Ticket</a></li>
+      </ul>
+    </nav>
+
+    <!-- Banner Cards -->
+    <section class="dashboard">
+      <div class="card in-progress">
+        <h2>In-Progress</h2>
+        <p>0</p>
+      </div>
+      <div class="card resolved">
+        <h2>Resolved</h2>
+        <p>0</p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+
+    <div class="container">
+      <!-- Left side: Tickets -->
+      <div class="tickets-section">
+        <h2 class="section-title">Customer Tickets</h2>
+        <div class="tickets-grid">
+          <!-- Ticket Card -->
+          <div class="ticket-card">
+            <div class="ticket-header">
+              <h4>Login Issues - Can't Access Account</h4>
+              <span class="status open">● Open</span>
+            </div>
+            <p>
+              Customer is unable to log in to their account. They've tried
+              resetting their password multiple times but still...
+            </p>
+            <div class="ticket-footer">
+              <span
+                >#1001 <span class="priority high">HIGH PRIORITY</span></span
+              >
+              <span>John Smith</span>
+              <span>1/15/2024</span>
+            </div>
+          </div>
+
+          <div class="ticket-card">
+            <div class="ticket-header">
+              <h4>Payment Failed - Card Declined</h4>
+              <span class="status open">● Open</span>
+            </div>
+            <p>
+              Customer attempted to pay using Visa ending 1234 but the payment
+              keeps failing despite sufficient balance.
+            </p>
+            <div class="ticket-footer">
+              <span
+                >#1002 <span class="priority high">HIGH PRIORITY</span></span
+              >
+              <span>Sarah Johnson</span>
+              <span>1/16/2024</span>
+            </div>
+          </div>
+
+          <div class="ticket-card">
+            <div class="ticket-header">
+              <h4>Unable to Download Invoice</h4>
+              <span class="status progress">● In-Progress</span>
+            </div>
+            <p>
+              Customer cannot download their January invoice from the billing
+              section. The download button is...
+            </p>
+            <div class="ticket-footer">
+              <span
+                >#1003
+                <span class="priority medium">MEDIUM PRIORITY</span></span
+              >
+              <span>Michael Brown</span>
+              <span>1/17/2024</span>
+            </div>
+          </div>
+
+          <div class="ticket-card">
+            <div class="ticket-header">
+              <h4>Incorrect Billing Address</h4>
+              <span class="status open">● Open</span>
+            </div>
+            <p>
+              Customer’s billing address shows a different city. They updated it
+              but it still displays the old one.
+            </p>
+            <div class="ticket-footer">
+              <span>#1004 <span class="priority low">LOW PRIORITY</span></span>
+              <span>Emily Davis</span>
+              <span>1/18/2024</span>
+            </div>
+          </div>
+
+          <div class="ticket-card">
+            <div class="ticket-header">
+              <h4>Incorrect Billing Address</h4>
+              <span class="status open">● Open</span>
+            </div>
+            <p>
+              Customer’s billing address shows a different city. They updated it
+              but it still displays the old one.
+            </p>
+            <div class="ticket-footer">
+              <span>#1004 <span class="priority low">LOW PRIORITY</span></span>
+              <span>Emily Davis</span>
+              <span>1/18/2024</span>
+            </div>
+          </div>
+
+          <div class="ticket-card">
+            <div class="ticket-header">
+              <h4>Incorrect Billing Address</h4>
+              <span class="status open">● Open</span>
+            </div>
+            <p>
+              Customer’s billing address shows a different city. They updated it
+              but it still displays the old one.
+            </p>
+            <div class="ticket-footer">
+              <span>#1004 <span class="priority low">LOW PRIORITY</span></span>
+              <span>Emily Davis</span>
+              <span>1/18/2024</span>
+            </div>
+          </div>
+
+          <div class="ticket-card">
+            <div class="ticket-header">
+              <h4>Incorrect Billing Address</h4>
+              <span class="status open">● Open</span>
+            </div>
+            <p>
+              Customer’s billing address shows a different city. They updated it
+              but it still displays the old one.
+            </p>
+            <div class="ticket-footer">
+              <span>#1004 <span class="priority low">LOW PRIORITY</span></span>
+              <span>Emily Davis</span>
+              <span>1/18/2024</span>
+            </div>
+          </div>
+
+          <div class="ticket-card">
+            <div class="ticket-header">
+              <h4>Incorrect Billing Address</h4>
+              <span class="status open">● Open</span>
+            </div>
+            <p>
+              Customer’s billing address shows a different city. They updated it
+              but it still displays the old one.
+            </p>
+            <div class="ticket-footer">
+              <span>#1004 <span class="priority low">LOW PRIORITY</span></span>
+              <span>Emily Davis</span>
+              <span>1/18/2024</span>
+            </div>
+          </div>
+
+          <div class="ticket-card">
+            <div class="ticket-header">
+              <h4>Incorrect Billing Address</h4>
+              <span class="status open">● Open</span>
+            </div>
+            <p>
+              Customer’s billing address shows a different city. They updated it
+              but it still displays the old one.
+            </p>
+            <div class="ticket-footer">
+              <span>#1004 <span class="priority low">LOW PRIORITY</span></span>
+              <span>Emily Davis</span>
+              <span>1/18/2024</span>
+            </div>
+          </div>
+
+          <div class="ticket-card">
+            <div class="ticket-header">
+              <h4>Incorrect Billing Address</h4>
+              <span class="status open">● Open</span>
+            </div>
+            <p>
+              Customer’s billing address shows a different city. They updated it
+              but it still displays the old one.
+            </p>
+            <div class="ticket-footer">
+              <span>#1004 <span class="priority low">LOW PRIORITY</span></span>
+              <span>Emily Davis</span>
+              <span>1/18/2024</span>
+            </div>
+          </div>
+
+          <!-- Add more cards as needed -->
+        </div>
+      </div>
+
+      <!-- Right side: Task Status -->
+      <div class="status-section">
+        <div class="status-header1">
+          <h3 class="sections-title1">Task Status</h3>
+          <p class="sections-title3">Select a ticket to add to Task Status</p>
+        </div>
+        <div class="status-header2">
+          <h3 class="sections-title2">Resolved Task</h3>
+          <p>No resolved tasks yet.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Left About -->
+        <div class="footer-about">
+          <h3>CS — Ticket System</h3>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </div>
+
+        <!-- Company -->
+        <div class="footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Mission</a></li>
+            <li><a href="#">Contact Sales</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">Products & Services</a></li>
+            <li><a href="#">Customer Stories</a></li>
+            <li><a href="#">Download Apps</a></li>
+          </ul>
+        </div>
+
+        <!-- Information -->
+        <div class="footer-links">
+          <h4>Information</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Join Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Links -->
+        <div class="footer-links">
+          <h4>Social Links</h4>
+          <ul class="social">
+            <li>
+              <i class="fa-brands fa-square-twitter"></i> @CS — Ticket System
+            </li>
+            <li><i class="fa-brands fa-linkedin"></i> @CS — Ticket System</li>
+            <li><i class="fa-brands fa-facebook"></i> @CS — Ticket System</li>
+            <li><i class="fa-regular fa-envelope"></i> support@cst.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr />
+      <div class="footer-bottom">
+        <p>© 2025 CS — Ticket System. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

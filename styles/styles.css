@@ -1,0 +1,294 @@
+/* Reset basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f7f7;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 70px;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  font-size: 20px;
+  color: #111;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #6c63ff;
+}
+
+.new-ticket-btn {
+  background-color: rgba(99, 46, 227, 1);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.new-ticket-btn:hover {
+  background-color: #443dcd;
+}
+
+/* Dashboard Section */
+.dashboard {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+/* Card Base Style */
+.card {
+  flex: 1 1 250px;
+  max-width: 675px;
+  padding: 70px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  border: 2px solid red;
+}
+
+.in-progress {
+  background: linear-gradient(to right, #7f00ff, #e100ff);
+  background-image: url("../image/vector1.png");
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: rgba(66, 42, 213, 1);
+}
+
+.resolved {
+  background: linear-gradient(to right, #11998e, #38ef7d);
+  background-image: url("../image/vector1.png"); /* Replace with actual image */
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: rgb(76, 199, 96);
+  transform: scaleX(1);
+}
+
+.card h2 {
+  font-size: 25px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.card p {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+/*  */
+/* General Page Styling */
+
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 25px 71px 50px;
+}
+
+.section-title {
+  padding-bottom: 10px;
+}
+
+.tickets-section {
+  flex: 2;
+}
+
+.tickets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 16px;
+}
+
+.ticket-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.ticket-header h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.status {
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.status.open {
+  background: #d1fae5;
+  color: #047857;
+}
+
+.status.progress {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.ticket-card p {
+  font-size: 14px;
+  color: #4b5563;
+  margin: 6px 0 10px;
+}
+
+.ticket-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #374151;
+}
+
+.priority {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.priority.high {
+  color: #dc2626;
+}
+.priority.medium {
+  color: #d97706;
+}
+.priority.low {
+  color: #059669;
+}
+
+/* Right Section */
+.status-section {
+  flex: 1;
+  border-radius: 12px;
+  padding: 0 20px;
+
+  max-width: 350px;
+}
+.sections-title1 {
+  padding-bottom: 8px;
+  font-size: 22px;
+}
+.sections-title2 {
+  margin: 8px 0px;
+}
+
+.status-section h3 {
+  margin-top: 0;
+}
+.status-header1 {
+  margin-bottom: 20px;
+}
+.status-header2 {
+}
+
+/*  */
+/* Footer */
+.footer {
+  background: #000;
+  color: #d1d5db;
+  padding: 40px 20px 20px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  max-width: 1380px;
+  margin: auto;
+}
+
+.footer-about h3 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-about p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-links h4 {
+  color: #fff;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.footer-links ul li a {
+  color: #d1d5db;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: #fff;
+}
+
+.social li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social i {
+  color: #fff;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #333;
+  margin: 20px 0;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  color: #9ca3af;
+}
