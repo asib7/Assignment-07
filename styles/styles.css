@@ -1,4 +1,3 @@
-/* Reset basic styles */
 * {
   margin: 0;
   padding: 0;
@@ -74,7 +73,6 @@ body {
   position: relative;
   overflow: hidden;
   color: white;
-  border: 2px solid red;
 }
 
 .in-progress {
@@ -87,7 +85,7 @@ body {
 
 .resolved {
   background: linear-gradient(to right, #11998e, #38ef7d);
-  background-image: url("../image/vector1.png"); /* Replace with actual image */
+  background-image: url("../image/vector1.png");
   background-size: cover;
   background-blend-mode: overlay;
   background-color: rgb(76, 199, 96);
@@ -160,11 +158,6 @@ body {
   color: #047857;
 }
 
-.status.progress {
-  background: #fef3c7;
-  color: #92400e;
-}
-
 .ticket-card p {
   font-size: 14px;
   color: #4b5563;
@@ -198,7 +191,6 @@ body {
   flex: 1;
   border-radius: 12px;
   padding: 0 20px;
-
   max-width: 350px;
 }
 .sections-title1 {
@@ -214,8 +206,6 @@ body {
 }
 .status-header1 {
   margin-bottom: 20px;
-}
-.status-header2 {
 }
 
 /*  */
@@ -291,4 +281,51 @@ hr {
   text-align: center;
   font-size: 14px;
   color: #9ca3af;
+}
+
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .status-section {
+    max-width: 100%;
+    padding: 20px 0;
+  }
+}
+@media (max-width: 600px) {
+  .nav-menu {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .dashboard {
+    flex-direction: column;
+  }
+  .tickets-grid {
+    grid-template-columns: 1fr;
+  }
+  .navbar {
+    padding: 20px;
+  }
+}
+.task-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task-item button {
+  background: #6c63ff;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.task-item button:hover {
+  background: #443dcd;
 }

@@ -1,131 +1,166 @@
 const tickets = [
   {
-    id: "#1001",
+    id: 1001,
     title: "Login Issues - Can't Access Account",
-    desc: "Customer is unable to log in to their account...",
-    status: "Open",
-    priority: "High",
-    name: "John Smith",
-    date: "1/15/2024",
+    description:
+      "Customer is unable to log in to their account. They've tried resetting their password multiple times but still...",
+    customer: "John Smith",
+    priority: "high",
+    status: "open",
+    createdAt: "2025-01-15",
   },
   {
-    id: "#1002",
+    id: 1002,
     title: "Payment Failed - Card Declined",
-    desc: "Customer attempted to pay using Visa ending 1234...",
-    status: "Open",
-    priority: "High",
-    name: "Sarah Johnson",
-    date: "1/16/2024",
+    description:
+      "Customer attempted to pay using Visa ending 1234 but the payment keeps failing despite sufficient balance.",
+    customer: "Sarah Johnson",
+    priority: "high",
+    status: "open",
+    createdAt: "2025-01-16",
   },
   {
-    id: "#1003",
+    id: 1003,
     title: "Unable to Download Invoice",
-    desc: "Customer cannot download their January invoice...",
-    status: "In-Progress",
-    priority: "Medium",
-    name: "Michael Brown",
-    date: "1/17/2024",
+    description:
+      "Customer cannot download their January invoice from the billing section. The download button is...",
+    customer: "Michael Brown",
+    priority: "medium",
+    status: "open",
+    createdAt: "2025-01-17",
   },
+
   {
-    id: "#1004",
+    id: 1004,
     title: "Incorrect Billing Address",
-    desc: "Customer’s billing address shows a different city...",
-    status: "Open",
-    priority: "Low",
-    name: "Emily Davis",
-    date: "1/18/2024",
+    description:
+      "Customer’s billing address shows a different city. They updated it but it still displays the old one.",
+    customer: "Emily Davis",
+    priority: "low",
+    status: "open",
+    createdAt: "2025-01-18",
   },
   {
-    id: "#1005",
-    title: "App Crash on Launch",
-    desc: "Customer reports that the mobile app crashes...",
-    status: "Open",
-    priority: "High",
-    name: "David Wilson",
-    date: "1/19/2024",
+    id: 1005,
+    title: "Feature Request: Dark Mode",
+    description:
+      "Customer reports that the mobile app crashes immediately upon opening on Android 13.",
+    customer: "Alice Lee",
+    priority: "low",
+    status: "open",
+    createdAt: "2025-01-19",
   },
   {
-    id: "#1006",
-    title: "Refund Not Processed",
-    desc: "Customer requested a refund two weeks ago...",
-    status: "In-Progress",
-    priority: "Medium",
-    name: "Sophia Taylor",
-    date: "1/20/2024",
+    id: 1006,
+    title: "App Crash on Startup",
+    description:
+      "Customer requested a refund two weeks ago but has not received the amount yet.",
+    customer: "Tom White",
+    priority: "high",
+    status: "open",
+    createdAt: "2025-01-20",
   },
   {
-    id: "#1007",
-    title: "Two-Factor Authentication Issue",
-    desc: "Customer is not receiving 2FA codes...",
-    status: "Open",
-    priority: "High",
-    name: "James Anderson",
-    date: "1/21/2024",
+    id: 1007,
+    title: "Refund Request",
+    description:
+      "Customer is not receiving 2FA codes on their registered phone number. #321…",
+    customer: "Kate Park",
+    priority: "medium",
+    status: "open",
+    createdAt: "2025-01-21",
   },
   {
-    id: "#1008",
-    title: "Unable to Update Profile Picture",
-    desc: "Customer tries to upload a new profile picture...",
-    status: "Open",
-    priority: "Low",
-    name: "Olivia Martinez",
-    date: "1/22/2024",
+    id: 1008,
+    title: "Subscription Cancelled Unexpectedly",
+    description:
+      "Customer tries to upload a new profile picture but gets 'Upload failed' error.",
+    customer: "Victor Hugo",
+    priority: "high",
+    status: "open",
+    createdAt: "2025-01-22",
   },
   {
-    id: "#1009",
-    title: "Subscription Auto-Renewal",
-    desc: "Customer wants to enable auto-renewal...",
-    status: "In-Progress",
-    priority: "Medium",
-    name: "Liam Thomas",
-    date: "1/17/2024",
+    id: 1009,
+    title: "Email Notifications Not Received",
+    description:
+      "Customer wants to enable auto-renewal for their subscription but the toggle is disabled.",
+    customer: "Daniel Kim",
+    priority: "low",
+    status: "open",
+    createdAt: "2025-01-23",
   },
   {
-    id: "#1010",
-    title: "Missing Order Confirmation Email",
-    desc: "Customer placed an order but didn't receive a confirmation...",
-    status: "Open",
-    priority: "Medium",
-    name: "Isabella Garcia",
-    date: "1/24/2024",
+    id: 1010,
+    title: "Slow Page Load Times",
+    description:
+      "Customer placed an order but didn't receive a confirmation email even though payment succeeded.",
+    customer: "Maria Garcia",
+    priority: "medium",
+    status: "open",
+    createdAt: "2025-01-24",
   },
 ];
 
-const ticketList = document.getElementById("ticketList");
-const resolvedTasks = document.getElementById("resolvedTasks");
+const ticketsGrid = document.getElementById("ticketsGrid");
+const taskList = document.getElementById("taskList");
+const resolvedList = document.getElementById("resolvedList");
+const inProgressCount = document.getElementById("inProgressCount");
+const resolvedCount = document.getElementById("resolvedCount");
 
-function renderTickets() {
-  tickets.forEach((ticket) => {
-    const card = document.createElement("div");
-    card.classList.add("ticket-card");
-    card.innerHTML = `
-      <div class="ticket-header">
-        <h4>${ticket.title}</h4>
-        <span class="ticket-status ${
-          ticket.status === "Open" ? "status-open" : "status-progress"
-        }">${ticket.status}</span>
-      </div>
-      <p>${ticket.desc}</p>
-      <p class="priority ${ticket.priority.toLowerCase()}">${
-      ticket.priority
-    } PRIORITY</p>
-      <div class="ticket-footer">
-        <span>${ticket.id} | ${ticket.name}</span>
-        <span>${ticket.date}</span>
-      </div>
-    `;
+let inProgress = 0;
+let resolved = 0;
 
-    // Click to resolve
-    card.addEventListener("click", () => resolveTicket(ticket));
+tickets.forEach((ticket) => {
+  const card = document.createElement("div");
+  card.className = "ticket-card";
+  card.innerHTML = `
+    <div class="ticket-header">
+      <h4>${ticket.title}</h4>
+      <span class="status open">● Open</span>
+    </div>
+    <p>${ticket.description}</p>
+    <div class="ticket-footer">
+      <span>#${ticket.id} <span class="priority ${ticket.priority}">
+        ${ticket.priority.toUpperCase()} PRIORITY</span></span>
+      <span>${ticket.customer}</span>
+      <span>${ticket.createdAt}</span>
+    </div>`;
+  card.addEventListener("click", () => addTask(ticket));
+  ticketsGrid.appendChild(card);
+});
 
-    ticketList.appendChild(card);
-  });
+function addTask(ticket) {
+  if (document.getElementById(`task-${ticket.id}`)) {
+    alert("Ticket already in Task Status!");
+    return;
+  }
+  inProgress++;
+  inProgressCount.textContent = inProgress;
+
+  const taskItem = document.createElement("div");
+  taskItem.className = "task-item";
+  taskItem.id = `task-${ticket.id}`;
+  taskItem.innerHTML = `
+     <span>${ticket.title}</span>
+     <button>Complete</button>
+  `;
+  taskItem
+    .querySelector("button")
+    .addEventListener("click", () => completeTask(ticket, taskItem));
+  taskList.appendChild(taskItem);
+  alert(`Ticket #${ticket.id} added to Task Status.`);
 }
 
-function resolveTicket(ticket) {
+function completeTask(ticket, element) {
+  element.remove();
+  inProgress--;
+  resolved++;
+  inProgressCount.textContent = inProgress;
+  resolvedCount.textContent = resolved;
+
   const li = document.createElement("li");
-  li.textContent = `${ticket.id} - ${ticket.title}`;
-  resolvedTasks.appendChild(li);
+  li.textContent = ticket.title;
+  resolvedList.appendChild(li);
+  alert(`Ticket #${ticket.id} marked as resolved.`);
 }
-
-renderTickets();
