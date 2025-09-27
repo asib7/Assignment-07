@@ -44,10 +44,10 @@ body {
 
 .new-ticket-btn {
   background-color: rgba(99, 46, 227, 1);
-  color: #fff;
+
   padding: 10px 16px;
   border-radius: 6px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .new-ticket-btn:hover {
@@ -295,6 +295,7 @@ hr {
 }
 @media (max-width: 600px) {
   .nav-menu {
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
   }
@@ -307,6 +308,13 @@ hr {
   .navbar {
     padding: 20px;
   }
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .new-ticket-btn {
+    padding: 7px 12px;
+    font-size: 14px;
+  }
 }
 .task-item {
   background: #fff;
@@ -317,15 +325,16 @@ hr {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 10px;
 }
 .task-item button {
-  background: #6c63ff;
-  color: #fff;
+  background: #54cf68;
+  /* color: #fff; */
   border: none;
   padding: 6px 10px;
   border-radius: 6px;
   cursor: pointer;
 }
 .task-item button:hover {
-  background: #443dcd;
+  background: #7cf087;
 }
